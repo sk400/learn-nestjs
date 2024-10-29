@@ -1,17 +1,13 @@
-import { Controller, Get, Post } from '@nestjs/common';
+/* eslint-disable prettier/prettier */
+import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('hello')
+  @Get()
   greet(): string {
     return this.appService.greet();
-  }
-
-  @Post('hello/:name')
-  greetWithName(name: string): string {
-    return this.appService.greetWithName(name);
   }
 }
